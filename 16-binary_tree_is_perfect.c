@@ -75,7 +75,7 @@ int _pow_recursion(int x, int y)
  * binary_tree_is_perfect - Check if binary_tree_is_perfect
  *
  * @tree: Tree to check
- * Return 1 if perfet, 0 otherwrise
+ * Return: 1 if perfect, 0 otherwrise
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
