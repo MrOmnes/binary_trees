@@ -79,10 +79,12 @@ int _pow_recursion(int x, int y)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-		return (0);
 
 	int h = binary_tree_height(tree) - 1;
 	int total = binary_tree_nodes(tree);
+
+	if (tree == NULL)
+		return (0);
+
 	return ((_pow_recursion(2, h + 1) - 1) == total);
 }
