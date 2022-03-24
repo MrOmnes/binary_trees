@@ -86,5 +86,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
+	if (tree->left == NULL && tree->right == NULL)
+		return (0);
+
 	return ((_pow_recursion(2, h + 1) - 1) == total);
 }
