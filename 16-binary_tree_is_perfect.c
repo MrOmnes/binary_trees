@@ -45,6 +45,33 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
+ * _pow_recursion - Print with recursion the raised power of x
+ * @x: Value raised
+ * @y: Power value
+ * Return: x ^ y
+*/
+int _pow_recursion(int x, int y)
+{
+	if (y < 0)
+	{
+		return (-1);
+	}
+
+	if (y == 0)
+	{
+		return (1);
+	}
+
+	if (y != '\0')
+	{
+		y--;
+		return (x * (_pow_recursion(x, y)));
+	}
+
+	return (0);
+}
+
+/**
  * binary_tree_is_perfect - Check if binary_tree_is_perfect
  *
  * @tree: Tree to check
@@ -57,5 +84,5 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	int h = binary_tree_height(tree) - 1;
 	int total = binary_tree_nodes(tree);
-	return ((pow(2, h + 1) - 1) == total);
+	return ((_pow_recursion(2, h + 1) - 1) == total);
 }
